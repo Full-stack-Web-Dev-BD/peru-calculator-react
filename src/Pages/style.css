@@ -1,0 +1,157 @@
+.cp{
+    cursor: pointer;
+}
+.App {
+    overflow: hidden;
+}
+
+.top_content {
+    border-bottom: 2px dashed #b5b5b5;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.header h3 {
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.three_block {
+    margin-top: 50px;
+}
+
+.input_group {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 30px;
+}
+
+.input_group label {
+    color: #000;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.input_group input {
+    width: 180px;
+    background: #D0D0D0;
+    border-radius: 0px;
+    text-align: center;
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.th_footer p {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    background: rgba(217, 217, 217, 0.46);
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.table_calculator th {
+    color: #000;
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.table_calculator th span {
+    white-space: nowrap;
+    margin: 0 15px;
+}
+
+.table thead th,
+.table td,
+.table th {
+    border: 0;
+    border-bottom: 0;
+    border-top: 0;
+    padding: 0;
+}
+
+
+.table td p {
+    margin: 0px 5px;
+}
+.table td p {
+    margin: 0px 5px;
+    background-color: #D9D9D9;
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.acc_row td {
+    text-align: center;
+}
+
+.acc_row .desc {
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    text-align: left;
+    margin-top: 4px; 
+}
+
+.desc p {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 4px; 
+}
+
+.delete_img img {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.single_result {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: end;
+}
+.single_result button{
+    margin-right: auto;
+    background-color: #D9D9D9;
+    border-radius: 0px;
+}
+.single_result h3 {
+    color: #000;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+.result{
+    margin: 0 20px 0 15px;
+}
+.single_result input {
+    width: 100px;
+    background: #D0D0D0;
+    border-radius: 0px;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+.box_input{
+    border-radius: 0px;
+    background-color: #d9d9d9;
+    text-align: center;
+}
