@@ -43,7 +43,7 @@ const Basic = () => {
   };
   const convertNumberToText = () => {
     var amount = total;
-    if(!amount) return
+    if (!amount) return;
     var value;
     var words = new Array();
     words[0] = "";
@@ -137,9 +137,11 @@ const Basic = () => {
       }
       words_string = words_string.split("  ").join(" ");
     }
-    var result =
-      words_string + ` CON  ${Math.floor((total % 1) * 100)}/100 SOLES`;
-    return result;
+
+    var decNumber = total.toString();
+    decNumber = decNumber.split(".")[1];
+    var result = words_string + ` CON  ${decNumber} /100 SOLES`;
+    return words_string ? result : "";
   };
 
   return (
