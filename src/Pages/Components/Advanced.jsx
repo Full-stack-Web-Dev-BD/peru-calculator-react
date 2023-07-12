@@ -18,7 +18,7 @@ const Advanced = () => {
     var existingData = [...tableCalculatorData];
     const mvalue = parseFloat(value);
     if (!isNaN(mvalue)) {
-      existingData[index][key] = mvalue.toFixed(2);
+      existingData[index][key] = mvalue;
       setTableCalculatorData(existingData);
       calculateResult();
     }

@@ -12,7 +12,7 @@ const Basic = () => {
   const handleImporteChange = (e) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value)) {
-      setImporte(value.toFixed(2));
+      setImporte(value);
       const igvValue = value * (18 / 100);
       const totalValue = parseFloat(value) + parseFloat(igvValue);
       setIGV(igvValue.toFixed(2));
@@ -23,7 +23,7 @@ const Basic = () => {
   const handleIGVChange = (e) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value)) {
-      setIGV(value.toFixed(2));
+      setIGV(value);
       const importeValue = value / (18 / 100);
       const totalValue = parseFloat(importeValue) + parseFloat(value);
       setImporte(importeValue.toFixed(2));
@@ -34,7 +34,7 @@ const Basic = () => {
   const handleTotalChange = (e) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value)) {
-      setTotal(value.toFixed(2));
+      setTotal(value);
       const importeValue = value - value * (18 / 100);
       const igvValue = parseFloat(value) - parseFloat(importeValue);
       setImporte(importeValue.toFixed(2));
