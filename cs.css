@@ -1,0 +1,521 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*     CABECERA
+*/
+
+.divCabecera {
+    text-align: center;
+    color:rgb(255, 255, 255);
+    width: 100%;
+}
+
+/*
+    TITULO
+*/
+
+h1{
+    font-size: 2rem;
+    font-family: sans-serif;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+@media (max-width: 600px){
+    h1{font-size:1.4rem}
+}
+
+h2{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+}
+@media (max-width: 600px){
+    h2{font-size:1.1rem}
+}
+
+/*  HOME
+*/
+.homeContenedor {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    width: 90%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    overflow: auto;
+}
+
+.homeItem {
+    width:45%;
+    text-align:justify;
+    float: left;
+    margin: 2.5%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color:black;
+}
+
+.homeItem img {
+    float:left;
+    padding-right: 5px;
+}
+
+.hPointer:hover, .hPointer input:hover{
+    cursor: pointer;
+}
+
+/*
+Ads */
+.ads{
+    max-width: 1200px;
+    margin:auto;
+}
+
+/* IVA PAISES 
+*/
+
+.divBasicoAvanzado{
+    max-width: 1000px;
+    margin:auto;
+    border: 0px;
+}
+
+.divBasicoAvanzado > * {
+    float:left;
+    width: 50%;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0.5rem 0 ;
+    max-width: 500px;
+}
+.selectorActivo{
+    color: black;
+    background-color: #f0f0f0;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.selectorNoActivo{
+    color:lightgray;
+    border-bottom: 2px solid black;
+}
+
+.contenedorFactura {
+    background-color: #f0f0f0;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    min-width: 280px;
+    max-width: 1000px;
+    margin:auto;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.inputGrande, select {
+    width: 100%;
+    padding: 0.6rem 4%;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size:1.5rem;
+    text-align: left;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Mozilla */
+input[type="number"] { -moz-appearance: textfield; }
+
+.centrado{
+    text-align: center;
+    width: 90%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 240px;
+    padding: 0 1rem 0 1rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.justificado{
+    text-align: justify; 
+    width: 90%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 240px;
+    padding: 20pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.contenedor{
+    background-color: khaki;
+    width: 90%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 240px;
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 1rem 7% 1rem 7% ;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-radius: 0.25rem;
+}
+
+
+.tituloInput{
+    height: 30pt;
+    min-width: 150px;
+    white-space: nowrap;
+    float: left;
+    padding: 10pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.valoresInput{
+    float: none;
+    overflow: hidden;
+    padding: 0pt ;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+@media (max-width: 500px){
+    .valoresInput{
+        width: 95%;
+    }
+}
+
+.titulo {
+    width: 20%;
+    white-space: nowrap;
+    float: left;
+    padding: 0pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.valores{
+    float:right;
+    width: 70%;
+    padding: 0pt ;
+    padding: 0pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: left;
+}
+@media (max-width: 800px){
+    .valores{
+        width: 95%;
+        min-width: 350;
+    }
+}
+.clear { clear:both; }
+
+/* NUMEROS A LETRAS 
+*/
+
+.tabla-cardinales{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.tabla-cardinales tbody tr td,th{
+    border: 1px solid #535353;
+    text-align: center;
+    padding: 0.2rem;
+}
+
+/* FACTURAS */
+.tituloInputNL {
+    height: 30pt;
+    width: min-content;
+    white-space: nowrap;
+    float: left;
+    padding: 10pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.valoresInputNL{
+    float:right;
+    width: 100%;
+    padding: 0pt ;
+    padding: 0pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: left;
+}
+.valoresNL{
+    float:right;
+    width: 100%;
+    padding: 0pt ;
+    padding: 0pt 5pt 0pt 0pt;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: left;
+}
+
+@media (min-width: 950px){
+    .valoresInputNL{
+        float:auto;
+        width:75%;
+    }
+    tituloInputNL{
+        width: 20%;
+    }
+}
+
+@media (max-width: 400px){
+    .divTitulo {
+        font-size: 1.8rem;
+    }
+}
+
+/**
+    FACTURA
+**/
+
+
+.factContenedor{
+    width: 95%;
+    margin:auto;
+    max-width: 800px;
+    min-width: 280px;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0% 3% 0% 3% ;
+    box-sizing: border-box;
+    overflow: auto;
+    -moz-box-sizing: border-box;
+}
+.factContenedor input::placeholder { 
+    color: rgb(183, 183, 183);
+    opacity: 1; /* Firefox */
+    font-size: 1rem;
+}
+.factContenedor input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(183, 183, 183);
+    font-size: 1rem;
+}
+.factContenedor input::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(183, 183, 183);
+    font-size: 1rem;
+}
+
+.factFilaTitulo{
+    overflow: auto;
+    padding:0px 0px 0.2rem;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.factFila{
+    background-color: white;
+    overflow: auto;
+    padding:0.3rem 0px 0.2rem;
+    border-bottom: 0.5px solid rgb(63, 63, 63);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.factFila input{
+    width: 92%;
+    display: inline-block;
+    font-size: 1.1rem;
+    color:#0f0f0f;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: rgb(164, 164, 164);
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+}
+
+
+.factTitUnid{
+    float:left;
+    width:30%;
+}
+.factTitPUnid{
+    float:left;
+    text-align: left;
+}
+.factTitPTotal{
+    float:right;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 0.5rem;
+}
+.factTitBorrar{
+    float:right;
+    width:6%;
+    text-align: center;
+    font-size: 1.2rem;
+    -webkit-text-stroke: 1.6px #f03a17;
+    cursor: pointer;
+}
+.factUnidades{
+    float: left;
+    padding-right: 3%;
+    width: 30%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+}
+.factPrecio{
+    float: left;    
+    padding-right: 3%;
+    width: 29%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+}
+.factSubTotal{
+    float: right;
+    width: 35%;
+    padding-right: 2%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+}
+.factSubTotal input{
+    text-align: right;
+}
+.factBorraFila{
+    float: right;
+    width: 6%;
+    padding-right: 0%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+    font-size: 0.8rem;
+    -webkit-text-stroke: 2px #f03a17;
+}
+.divAddFila{
+    width: 95%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 240px;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0% 3% 0% 3% ;
+    box-sizing: border-box;
+    overflow: auto;
+    -moz-box-sizing: border-box;
+}
+.factAddFila{
+    background-color: #f0f0f0;
+    float: right;
+    width: 6%;
+    margin-right: 5%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    border: none;
+}
+.factTipoIGV{
+    float:left;
+    margin: 0.2rem 0 0.2rem 0;
+}
+
+.tablaFactResultado{
+    float: right;
+    margin-right: 8%;
+}
+.tablaFactResultado tr td{
+    text-align: right;
+    font-size: 1.2rem;
+    padding: 0 0 0.4rem 0.4rem;
+}
+#cellBase, #cellIGV, #cellTotal{
+    min-width: 80px;
+    font-family: sans-serif;
+}
+@media (max-width: 400px){
+    .tablaFactResultado tr td{
+        font-size: 1rem;
+    }
+    #cellBase, #cellIGV, #cellTotal{
+        min-width: 60px;
+    }
+}
+
+/** CAMBIOS **/
+
+@media (max-width: 600px){
+    .homeItem{
+        width: 90%;
+        margin: 2% 5% 2% 5%;
+    }
+    .divTitulo {
+        font-size: 2.5rem;
+    }
+    .contenedor{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 359px){
+    /** Titulos Factura **/
+    .factTitUnid{
+        float:left;
+        width:30%;
+    }
+    .factTitPUnid{
+        float:left;
+        text-align: left;
+    }
+    .factTitPTotal{
+        float:right;
+        text-align: right;
+    }
+    .factTitBorrar{
+        float:right;
+        width:10%;
+        text-align: left;
+    }
+    /** Montos Lista Factura**/
+    .factUnidades{
+        width: 33%;
+        padding-right: 4%;
+        margin-bottom: 0.3rem;
+    }
+    .factPrecio{
+        width:62%;
+        padding-right: 12%;
+    }
+    .factSubTotal{
+        width: 57%;
+        float: right;
+        margin-right: 0px;
+    }
+    .factBorraFila, .factAddFila{
+        width: 15%;
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: middle;
+    }
+}
