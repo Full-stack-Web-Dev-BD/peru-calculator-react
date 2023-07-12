@@ -5,42 +5,54 @@ const Advanced = () => {
   const [subTotal, setsubTotal] = useState(0);
   const [IVG, setIVG] = useState(0);
   const [total, settotal] = useState(0);
-  const [tableCalculatorData, setTableCalculatorData] = useState([
-    // {
-    //   DESCRIPCION: "Descriptions is ",
-    //   CANTIDAD: 41,
-    //   PRECIO: 53,
-    // },
-  ]);
+  const [tableCalculatorData, setTableCalculatorData] = useState([]);
   const addRow = () => {
     setTableCalculatorData([...tableCalculatorData, {}]);
   };
   const updateRowData = (key, index, value) => {
     var existingData = [...tableCalculatorData];
     existingData[index][key] = value;
-    console.log(existingData);
     setTableCalculatorData(existingData);
     calculateResult();
   };
 
-  const calculateResult = () => {
-    var tSubTotal = 0;
-    tableCalculatorData.map((row, index) => {
-      if (row.CANTIDAD && row.PRECIO) {
-        tSubTotal += row.CANTIDAD * row.PRECIO;
-        console.log(tSubTotal);
-      }
-    });
-    setsubTotal(tSubTotal);
-    calculateValues(tSubTotal);
+  const calculateResult = (data) => {
+    if (data) {
+        
+      var tSubTotal = 0;
+      data.map((row, index) => {
+        if (row.CANTIDAD && row.PRECIO) {
+          tSubTotal += row.CANTIDAD * row.PRECIO;
+        }
+      });
+      setsubTotal(tSubTotal);
+      calculateValues(tSubTotal);
+    } else {
+      var tSubTotal = 0;
+      tableCalculatorData.map((row, index) => {
+        if (row.CANTIDAD && row.PRECIO) {
+          tSubTotal += row.CANTIDAD * row.PRECIO;
+        }
+      });
+      setsubTotal(tSubTotal);
+      calculateValues(tSubTotal);
+    }
   };
   const calculateValues = (total) => {
     const igvPercentage = 18;
-    const igv = total * (igvPercentage / 100); 
+    const igv = total * (igvPercentage / 100);
     setIVG(igv.toFixed(2));
-    settotal(total.toFixed(2));
     settotal((total + igv).toFixed(2));
   };
+  function removeItem(index) {
+    setTableCalculatorData((prevData) => {
+      const newData = [...prevData];
+      newData.splice(index, 1);
+      calculateResult(newData);
+      return newData;
+    });
+  }
+
   return (
     <div className="row">
       <div className="col-12">
@@ -76,7 +88,7 @@ const Advanced = () => {
               </thead>
               <tbody>
                 {tableCalculatorData.map((item, i) => (
-                  <tr className="acc_row">
+                  <tr className="acc_row" key={i}>
                     <td scope="row" className="desc">
                       <p>
                         <input
@@ -132,7 +144,10 @@ const Advanced = () => {
                       </p>
                     </td>
                     <td className="delete_img">
-                      <img src={require("../delete.png")} />
+                      <img
+                        onClick={(e) => removeItem(i)}
+                        src={require("../delete.png")}
+                      />
                     </td>
                   </tr>
                 ))}
