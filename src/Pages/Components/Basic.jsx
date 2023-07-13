@@ -168,7 +168,7 @@ const Basic = () => {
           <div className="input_group">
             <label htmlFor="">S/.</label>
             <input
-              onBlur={(e) => setIGV((1 * total).toFixed(2))}
+              onBlur={(e) => setTotal((1 * total).toFixed(2))}
               type="number"
               className="form-control"
               value={total}
