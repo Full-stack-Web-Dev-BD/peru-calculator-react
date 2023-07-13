@@ -3,6 +3,8 @@ const Basic = () => {
   const [importe, setImporte] = useState("");
   const [igv, setIGV] = useState("");
   const [total, setTotal] = useState();
+
+  // text
   const [toText, settoText] = useState();
 
   useEffect(() => {
@@ -10,36 +12,30 @@ const Basic = () => {
   }, [total]);
 
   const handleImporteChange = (e) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value)) {
-      setImporte(value);
-      const igvValue = value * (18 / 100);
-      const totalValue = parseFloat(value) + parseFloat(igvValue);
-      setIGV(igvValue.toFixed(2));
-      setTotal(totalValue.toFixed(2));
-    }
+    var docBasevalue = e.target.value;
+    setImporte(docBasevalue);
+    var docIVAvalue = (docBasevalue * ((100 + 18) / 100 - 1)).toFixed(2);
+    setIGV(docIVAvalue);
+    var docTotalvalue = (1 * docBasevalue + 1 * docIVAvalue).toFixed(2);
+    setTotal(docTotalvalue);
   };
 
   const handleIGVChange = (e) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value)) {
-      setIGV(value);
-      const importeValue = value / (18 / 100);
-      const totalValue = parseFloat(importeValue) + parseFloat(value);
-      setImporte(importeValue.toFixed(2));
-      setTotal(totalValue.toFixed(2));
-    }
+    var docIVAvalue = e.target.value;
+    setIGV(docIVAvalue);
+    var docBasevalue = ((docIVAvalue * 100) / 18).toFixed(2);
+    setImporte(docBasevalue);
+    var docTotalvalue = (1 * docBasevalue + 1 * docIVAvalue).toFixed(2);
+    setTotal(docTotalvalue);
   };
 
   const handleTotalChange = (e) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value)) {
-      setTotal(value);
-      const importeValue = value - value * (18 / 100);
-      const igvValue = parseFloat(value) - parseFloat(importeValue);
-      setImporte(importeValue.toFixed(2));
-      setIGV(igvValue.toFixed(2));
-    }
+    var docTotalvalue = e.target.value;
+    setTotal(docTotalvalue);
+    var docBasevalue = ((docTotalvalue / (100 + 18)) * 100).toFixed(2);
+    setImporte(docBasevalue);
+    var docIVAvalue = (1 * docTotalvalue - 1 * docBasevalue).toFixed(2);
+    setIGV(docIVAvalue);
   };
   const convertNumberToText = () => {
     var amount = total;
@@ -140,7 +136,8 @@ const Basic = () => {
 
     var decNumber = total.toString();
     decNumber = decNumber.split(".")[1];
-    var result = words_string + ` CON  ${decNumber?decNumber:'00'} /100 SOLES`;
+    var result =
+      words_string + ` CON  ${decNumber ? decNumber : "00"} /100 SOLES`;
     return words_string ? result : "";
   };
 
@@ -151,6 +148,7 @@ const Basic = () => {
           <div className="input_group">
             <label htmlFor="">Importe</label>
             <input
+              onBlur={(e) => setImporte((1 * importe).toFixed(2))}
               type="number"
               className="form-control"
               value={importe}
@@ -160,6 +158,7 @@ const Basic = () => {
           <div className="input_group">
             <label htmlFor="">IGV 18%</label>
             <input
+              onBlur={(e) => setIGV((1 * igv).toFixed(2))}
               type="number"
               className="form-control"
               value={igv}
@@ -169,6 +168,7 @@ const Basic = () => {
           <div className="input_group">
             <label htmlFor="">S/.</label>
             <input
+              onBlur={(e) => setIGV((1 * total).toFixed(2))}
               type="number"
               className="form-control"
               value={total}
