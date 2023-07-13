@@ -159,7 +159,7 @@ const Advanced = () => {
 
     var decNumber = total.toString();
     decNumber = decNumber.split(".")[1];
-    var result = words_string + ` CON  ${decNumber} /100 SOLES`;
+    var result = words_string + ` CON  ${decNumber?decNumber:'00'} /100 SOLES`;
     return words_string ? result : "";
   };
   return (
